@@ -30,7 +30,7 @@ Após selecionar o sistema, o usuário vai direto para a quadra sem escolha de r
 |---|---|---|
 |1|01_base.txt|Posição base do rodízio|
 |2|02_passe.txt|Posição após o saque adversário|
-|3|03_levantamento.txt|Posição no levantamento|
+|3|03_ataque.txt|Posição no levantamento|
 |4|04_corte.txt|Posição dos jogadores no ataque|
 |5|05_defesa.txt|Posição de defesa|
 
@@ -62,10 +62,9 @@ volei_simulator/
    │   ├── rod1/
    │   │   ├── 01_base.txt
    │   │   ├── 02_passe.txt
-   │   │   ├── 03_levantamento.txt
+   │   │   ├── 03_ataque.txt
    │   │   ├── 04_corte.txt
-   │   │   ├── 05_defesa.txt
-   │   │   └── 06_bloqueio.txt
+   │   │   └── 05_defesa.txt
    │   ├── rod2/
    │   ├── rod3/
    │   ├── rod4/
