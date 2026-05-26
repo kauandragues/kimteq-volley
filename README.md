@@ -33,7 +33,6 @@ Após selecionar o sistema, o usuário vai direto para a quadra sem escolha de r
 |3|03_levantamento.txt|Posição no levantamento|
 |4|04_corte.txt|Posição dos jogadores no ataque|
 |5|05_defesa.txt|Posição de defesa|
-|6|06_bloqueio.txt|Posição de bloqueio|
 
 **Controles na tela de quadra:**
 
