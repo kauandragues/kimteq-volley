@@ -37,14 +37,14 @@ Após selecionar o sistema, o usuário vai direto para a quadra sem escolha de r
 
 **Controles na tela de quadra:**
 
-|Tecla|Ação|
-|---|---|---|
-|`→` (direita)|Próxima fase|
-|`←` (esquerda)|Fase anterior|
-|`↑` (cima)|Rodízio seguinte (1→2→3→4→5→6→1...)|
-|`↓` (baixo)|Rodízio anterior (6→5→4→3→2→1→6...)|
-|`S`|Trocar sistema tático|
-|`ESC`|Voltar ao menu principal|
+| Tecla| Ação|
+| ---|---|
+| `→` (direita)| Próxima fase|
+| `←` (esquerda)| Fase anterior|
+| `↑` (cima)| Rodízio seguinte (1→2→3→4→5→6→1...)|
+| `↓` (baixo)| Rodízio anterior (6→5→4→3→2→1→6...)|
+| `S`| Trocar sistema tático|
+| `ESC`| Voltar ao menu principal|
 
 ---
 
