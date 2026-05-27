@@ -85,12 +85,12 @@ int exibirSelecaoSistema() {
 }
 
 void exibirCabecalho() {
-    printf("%s%s========================================%s\n", NEGRITO, CIANO, RESET);
-    printf("%s%s        %s - Rodizio %d%s\n", NEGRITO, VERDE_B,
+    printf("%s%s===========================================%s\n", NEGRITO, CIANO, RESET);
+    printf("%s%s  %s - Rodizio %d%s", NEGRITO, VERDE_B,
            NOMES_SISTEMAS[estado.sistema - 1], estado.rodizio, RESET);
-    printf("%s%s        %s%s\n", NEGRITO, AMARELO_B,
+    printf("%s  %s%s\n", AMARELO_B,
            NOMES_FASES[estado.fase], RESET);
-    printf("%s%s========================================%s\n", NEGRITO, CIANO, RESET);
+    printf("%s%s===========================================%s", NEGRITO, CIANO, RESET);
 }
 
 void exibirBarraControles() {
