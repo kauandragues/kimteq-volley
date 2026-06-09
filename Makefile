@@ -1,5 +1,5 @@
 CC = gcc
-CFLAGS = -Wall -I include
+CFLAGS = -Wall -I src
 SRC = src/main.c src/telas.c src/arquivos.c
 TARGET = volei_simulator.exe
 
