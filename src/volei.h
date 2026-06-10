@@ -23,23 +23,14 @@
 // constanstes para usar cores e reset ANSI para o terminal
 #define RESET       "\033[0m"
 #define VERMELHO    "\033[31m"
-#define VERDE       "\033[32m"
 #define AMARELO     "\033[33m"
-#define AZUL        "\033[34m"
 #define CIANO       "\033[36m"
 #define BRANCO      "\033[37m"
 #define VERMELHO_B  "\033[91m"
 #define VERDE_B     "\033[92m"
 #define AMARELO_B   "\033[93m"
 #define AZUL_B      "\033[94m"
-#define CIANO_B     "\033[96m"
-#define BRANCO_B    "\033[97m"
-#define BG_PRETA    "\033[40m"
-#define BG_VERDE    "\033[42m"
-#define BG_AZUL     "\033[44m"
-#define BG_BRANCA   "\033[47m"
 #define NEGRITO     "\033[1m"
-#define SUBLINHADO  "\033[4m"
 
 // constantes para usar no sistema
 #define NUM_SISTEMAS 2
