@@ -35,7 +35,7 @@
 // constantes para usar no sistema
 #define NUM_SISTEMAS 2
 #define NUM_RODIZIOS 6
-#define NUM_FASES    6
+#define NUM_FASES    5
 #define TAM_CAMINHO  120
 
 #define KEY_CIMA     300

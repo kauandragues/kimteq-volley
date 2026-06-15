@@ -32,7 +32,7 @@ char caminho_global[TAM_CAMINHO];
 //Função que monta o caminho do arquivo .txt da quadra a ser lida, vai ser chamada na função carregarSlide() no arquivos.c
 void montarCaminho(){
     const char *sistemaStr = (estado.sistema == 1) ? "5x1" : "4x2";
-    snprintf(caminho_global, "slides/%s/rod%d/%s", sistemaStr, estado.rodizio, NOMES_ARQUIVOS_FASE[estado.fase]);
+    snprintf(caminho_global, TAM_CAMINHO, "quadras/%s/rod%d/%s", sistemaStr, estado.rodizio, NOMES_ARQUIVOS_FASE[estado.fase]);
 }
 
 //Função que carrega os arquivos na tela, chamado em telas.c todas as vezes que muda a fase ou o rodizio ou qualquer coisa da tela que precise carregar um dos arquivos de quadra
