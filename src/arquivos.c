@@ -18,12 +18,18 @@ const char *NOMES_SISTEMAS[] = {
 };
 
 //Constante que salva o nome de cada arquivo de cada fase do jogo, vai ser chamado no Arquivos(este arquivo) para ler os arquivos .txt das quadras
-const char *NOMES_ARQUIVOS_FASE[] = {
+const char *NOMES_ARQUIVOS_FASE_5x1[] = {
     "01_base.txt",
     "02_saque.txt",
     "03_defesa.txt",
     "04_ataque.txt",
     "05_recpcao.txt"
+};
+
+const char *NOMES_ARQUIVOS_FASE_4x2[] = {
+    "01_Saque.txt",
+    "02_Recepcao.txt",
+
 };
 
 //Variável global que salva o estado atual do jogo, vai ser chamada em todas as telas para verificar o estado do jogo
@@ -32,7 +38,11 @@ char caminho_global[TAM_CAMINHO];
 //Função que monta o caminho do arquivo .txt da quadra a ser lida, vai ser chamada na função carregarSlide() no arquivos.c
 void montarCaminho(){
     const char *sistemaStr = (estado.sistema == 0) ? "5x1" : "4x2";
-    snprintf(caminho_global, TAM_CAMINHO, "quadras/%s/rod%d/%s", sistemaStr, estado.rodizio, NOMES_ARQUIVOS_FASE[estado.fase]);
+    if(estado.sistema == 0){
+        snprintf(caminho_global, TAM_CAMINHO, "quadras/%s/rod%d/%s", sistemaStr, estado.rodizio, NOMES_ARQUIVOS_FASE_5x1[estado.fase]);
+    }else{
+        snprintf(caminho_global, TAM_CAMINHO, "quadras/%s/rod%d/%s", sistemaStr, estado.rodizio, NOMES_ARQUIVOS_FASE_4x2[estado.fase]);
+    }
 }
 
 //Função que carrega os arquivos na tela, chamado em telas.c todas as vezes que muda a fase ou o rodizio ou qualquer coisa da tela que precise carregar um dos arquivos de quadra
