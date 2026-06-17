@@ -20,18 +20,22 @@ int main() {
                 exibirMenuInicial();
                 tecla = capturarTecla();
 
-                if (tecla == CIMA || tecla == BAIXO) {
-                    estado.opcaoSelecionada = !estado.opcaoSelecionada; // troca as opções do menu
-                } else if (tecla == ENTER) {
-                    if (estado.opcaoSelecionada == 1) {
-                        rodando = 0; // para o programa
-                    } else {
-                        estado.sistema = 0; // reinicia para 5x1
-                        estado.rodizio = 1; // reinicia para rod1
-                        estado.fase = 0; // reinicia para fase 1
-                        estado.telaAtual = 1; // tela de seleção do sistema
-                        estado.opcaoSelecionada = 0;
-                    }
+                switch(tecla){
+                    case CIMA:
+                    case BAIXO: 
+                        estado.opcaoSelecionada = !estado.opcaoSelecionada; // troca as opções do menu
+                        break;
+                    case ENTER:
+                        if (estado.opcaoSelecionada == 1) {
+                            rodando = 0; // para o programa
+                        } else {
+                            estado.sistema = 0; // reinicia para 5x1
+                            estado.rodizio = 1; // reinicia para rod1
+                            estado.fase = 0; // reinicia para fase 1
+                            estado.telaAtual = 1; // tela de seleção do sistema
+                            estado.opcaoSelecionada = 0;
+                        }
+                        break;
                 }
                 break;
 
@@ -39,20 +43,24 @@ int main() {
                 exibirSelecaoSistema(estado.opcaoSelecionada);
                 tecla = capturarTecla();
 
-                if (tecla == CIMA || tecla == BAIXO) {
-                    estado.opcaoSelecionada = !estado.opcaoSelecionada; // troca as opções do menu
-                } else if (tecla == ENTER) {
-                    if (estado.opcaoSelecionada == 1) {
-                        estado.sistema = 0; // reinicia para 5x1
-                        estado.rodizio = 1; // reinicia para rod1
-                        estado.fase = 0; // reinicia para fase 1
-                        estado.telaAtual = 2; // tela de quadra
-                    } else {
-                        estado.sistema = 1; // sistema 4x2
-                        estado.rodizio = 1; // reinicia para rod1
-                        estado.fase = 0; // reinicia para fase 1
-                        estado.telaAtual = 2; // tela de quadra
-                    }
+                switch(tecla){
+                    case CIMA:
+                    case BAIXO:
+                        estado.opcaoSelecionada = !estado.opcaoSelecionada;
+                        break;
+                    case ENTER:
+                        if (estado.opcaoSelecionada == 0) { // 5x1
+                            estado.sistema = 0; // reinicia para 5x1
+                            estado.rodizio = 1; // reinicia para rod1
+                            estado.fase = 0; // reinicia para fase 1
+                            estado.telaAtual = 2; // tela de quadra
+                        } else {// 4x2
+                            estado.sistema = 1; // sistema 4x2
+                            estado.rodizio = 1; // reinicia para rod1
+                            estado.fase = 0; // reinicia para fase 1
+                            estado.telaAtual = 2; // tela de quadra
+                        }
+                        break;
                 }
                 break;
 
