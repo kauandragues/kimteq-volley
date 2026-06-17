@@ -38,11 +38,12 @@
 #define NUM_FASES    5
 #define TAM_CAMINHO  120
 
-#define KEY_CIMA     300
-#define KEY_BAIXO    301
-#define KEY_DIREITA  302
-#define KEY_ESQUERDA 303
-
+#define CIMA    72
+#define BAIXO   80
+#define DIREITA 77
+#define ESQUERDA 75
+#define ENTER   13
+#define ESC     27
 // structs e enums
 typedef enum {
     TELA_MENU,

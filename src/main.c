@@ -1,12 +1,5 @@
 #include "volei.h"
 
-#define CIMA    72
-#define BAIXO   80
-#define DIREITA 77
-#define ESQUERDA 75
-#define ENTER   13
-#define ESC     27
-
 EstadoJogo estado;
 
 int capturarTecla() {
@@ -14,10 +7,10 @@ int capturarTecla() {
     if (tecla == 0 || tecla == 224) {
         int ext = _getch();
         switch (ext) {
-            case CIMA:    return KEY_CIMA;
-            case BAIXO:   return KEY_BAIXO;
-            case DIREITA: return KEY_DIREITA;
-            case ESQUERDA: return KEY_ESQUERDA;
+            case 72:    return CIMA;
+            case 80:   return BAIXO;
+            case 77: return DIREITA;
+            case 75: return ESQUERDA;
         }
     }
     return tecla;
@@ -41,7 +34,7 @@ int main() {
                 exibirMenuInicial();
                 tecla = capturarTecla();
 
-                if (tecla == KEY_CIMA || tecla == KEY_BAIXO) {
+                if (tecla == CIMA || tecla == BAIXO) {
                     estado.opcaoSelecionada = !estado.opcaoSelecionada;
                 } else if (tecla == ENTER) {
                     if (estado.opcaoSelecionada == 1) {
@@ -67,16 +60,16 @@ int main() {
                 tecla = capturarTecla();
 
                 switch (tecla) {
-                    case KEY_DIREITA:
+                    case DIREITA:
                         if (estado.fase < NUM_FASES - 1) estado.fase++;
                         break;
-                    case KEY_ESQUERDA:
+                    case ESQUERDA:
                         if (estado.fase > 0) estado.fase--;
                         break;
-                    case KEY_CIMA:
+                    case CIMA:
                         if (++estado.rodizio > NUM_RODIZIOS) estado.rodizio = 1;
                         break;
-                    case KEY_BAIXO:
+                    case BAIXO:
                         if (--estado.rodizio < 1) estado.rodizio = NUM_RODIZIOS;
                         break;
                     case 'S': case 's':
