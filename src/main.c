@@ -70,16 +70,24 @@ int main() {
 
                 switch (tecla) {
                     case DIREITA:
-                        if (estado.fase < NUM_FASES - 1) estado.fase++;
+                        if(estado.sistema == 0){
+                            if (estado.fase < NUM_FASES_5x1 - 1) estado.fase++;
+                        }else{
+                            if (estado.fase < NUM_FASES_4x2 - 1) estado.fase++;
+                        }
                         break;
                     case ESQUERDA:
-                        if (estado.fase > 0) estado.fase--;
+                            if (estado.fase > 0) estado.fase--;
                         break;
                     case CIMA:
-                        if (++estado.rodizio > NUM_RODIZIOS) estado.rodizio = 1;
+                        if(estado.sistema == 0){
+                            if (estado.rodizio < NUM_RODIZIOS_5x1) estado.rodizio++;
+                        }else{
+                            if (estado.rodizio < NUM_RODIZIOS_4x2) estado.rodizio++;
+                        }
                         break;
                     case BAIXO:
-                        if (--estado.rodizio < 1) estado.rodizio = NUM_RODIZIOS;
+                        if (estado.rodizio > 1) estado.rodizio--;
                         break;
                     case 'S': case 's':
                         estado.telaAtual = 1;

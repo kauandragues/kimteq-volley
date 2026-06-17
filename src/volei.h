@@ -34,8 +34,10 @@
 
 // constantes para usar no sistema
 #define NUM_SISTEMAS 2
-#define NUM_RODIZIOS 6
-#define NUM_FASES    5
+#define NUM_RODIZIOS_5x1 6
+#define NUM_RODIZIOS_4x2 3
+#define NUM_FASES_5x1    5
+#define NUM_FASES_4x2    2
 #define TAM_CAMINHO  120
 
 #define CIMA    72
