@@ -73,7 +73,7 @@ void centralizarTexto(int y, const char *texto);
 void centralizarTextoCor(int y, const char *texto, const char *cor);
 
 void exibirMenuInicial(void);
-int exibirSelecaoSistema(void);
+void exibirSelecaoSistema(int opcao);
 void exibirCabecalho(void);
 void exibirBarraControles(void);
 void exibirQuadra(void);

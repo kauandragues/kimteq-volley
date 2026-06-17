@@ -3,11 +3,11 @@
 EstadoJogo estado;
 
 int main() {
-    estado.sistema = 1;
-    estado.rodizio = 1;
-    estado.fase = 0;
-    estado.telaAtual = 0;
-    estado.opcaoSelecionada = 0;
+    estado.sistema = 0; // inicializa com 5x1
+    estado.rodizio = 1; // inicializa com rod1
+    estado.fase = 0;    // inicializa com fase 1
+    estado.telaAtual = 0; // inicializar com tela menu
+    estado.opcaoSelecionada = 0; // inicializa com opção 1
 
     int tecla;
     int rodando = 1;
@@ -16,32 +16,47 @@ int main() {
 
     while (rodando) {
         switch (estado.telaAtual) {
-            case 0:
+            case 0: // TELA DE MENU
                 exibirMenuInicial();
                 tecla = capturarTecla();
 
                 if (tecla == CIMA || tecla == BAIXO) {
-                    estado.opcaoSelecionada = !estado.opcaoSelecionada;
+                    estado.opcaoSelecionada = !estado.opcaoSelecionada; // troca as opções do menu
                 } else if (tecla == ENTER) {
                     if (estado.opcaoSelecionada == 1) {
-                        rodando = 0;
+                        rodando = 0; // para o programa
                     } else {
-                        estado.sistema = 1;
-                        estado.rodizio = 1;
-                        estado.fase = 0;
-                        estado.telaAtual = 1;
+                        estado.sistema = 0; // reinicia para 5x1
+                        estado.rodizio = 1; // reinicia para rod1
+                        estado.fase = 0; // reinicia para fase 1
+                        estado.telaAtual = 1; // tela de seleção do sistema
+                        estado.opcaoSelecionada = 0;
                     }
                 }
                 break;
 
-            case 1:
-                estado.sistema = exibirSelecaoSistema();
-                estado.rodizio = 1;
-                estado.fase = 0;
-                estado.telaAtual = 2;
+            case 1: // TELA DE SELEÇÃO DO SISTEMA
+                exibirSelecaoSistema(estado.opcaoSelecionada);
+                tecla = capturarTecla();
+
+                if (tecla == CIMA || tecla == BAIXO) {
+                    estado.opcaoSelecionada = !estado.opcaoSelecionada; // troca as opções do menu
+                } else if (tecla == ENTER) {
+                    if (estado.opcaoSelecionada == 1) {
+                        estado.sistema = 0; // reinicia para 5x1
+                        estado.rodizio = 1; // reinicia para rod1
+                        estado.fase = 0; // reinicia para fase 1
+                        estado.telaAtual = 2; // tela de quadra
+                    } else {
+                        estado.sistema = 1; // sistema 4x2
+                        estado.rodizio = 1; // reinicia para rod1
+                        estado.fase = 0; // reinicia para fase 1
+                        estado.telaAtual = 2; // tela de quadra
+                    }
+                }
                 break;
 
-            case 2:
+            case 2: // TELA DE QUADRA
                 exibirQuadra();
                 tecla = capturarTecla();
 

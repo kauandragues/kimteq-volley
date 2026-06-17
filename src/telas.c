@@ -58,54 +58,37 @@ void exibirMenuInicial()
     centralizarTextoCor(22, "Use as setas \033[1;32m\u2191\u2193\033[0m para navegar e ENTER para selecionar", AMARELO);
 }
 
-int exibirSelecaoSistema()
+void exibirSelecaoSistema(int opcao) // 0 = 5x1  1 = 4x2
 {
-    int opcao = 0; // 0 = 5x1, 1 = 4x2
-    int tecla, ext;
 
-    do
+    limparTela();
+    printf("\n\n\n");
+    centralizarTextoCor(4, "========================================", CIANO);
+    centralizarTextoCor(5, "      SELECIONE O SISTEMA TATICO", VERDE_B);
+    centralizarTextoCor(6, "========================================", CIANO);
+    printf("\n\n\n\n");
+
+    if (opcao == 0)
     {
-        limparTela();
-        printf("\n\n\n");
-        centralizarTextoCor(4, "========================================", CIANO);
-        centralizarTextoCor(5, "      SELECIONE O SISTEMA TATICO", VERDE_B);
-        centralizarTextoCor(6, "========================================", CIANO);
-        printf("\n\n\n\n");
+        centralizarTextoCor(10, ">> Sistema 5x1 (1 Levantador, 5 Atacantes) <<", VERDE_B);
+    }
+     else
+    {
+        centralizarTextoCor(10, "   Sistema 5x1 (1 Levantador, 5 Atacantes)", BRANCO);
+    }
+    printf("\n");
+    if (opcao == 1)
+    {
+        centralizarTextoCor(12, ">> Sistema 4x2 (2 Levantadores, 4 Atacantes) <<", VERDE_B);
+    }
+    else
+    {
+        centralizarTextoCor(12, "   Sistema 4x2 (2 Levantadores, 4 Atacantes)", BRANCO);
+    }
 
-        if (opcao == 0)
-        {
-            centralizarTextoCor(10, ">> Sistema 5x1 (1 Levantador, 5 Atacantes) <<", VERDE_B);
-        }
-        else
-        {
-            centralizarTextoCor(10, "   Sistema 5x1 (1 Levantador, 5 Atacantes)", BRANCO);
-        }
-        printf("\n");
-        if (opcao == 1)
-        {
-            centralizarTextoCor(12, ">> Sistema 4x2 (2 Levantadores, 4 Atacantes) <<", VERDE_B);
-        }
-        else
-        {
-            centralizarTextoCor(12, "   Sistema 4x2 (2 Levantadores, 4 Atacantes)", BRANCO);
-        }
+    printf("\n\n\n\n\n\n\n\n");
+    centralizarTextoCor(21, "Use as setas \033[1;32m\u2191\u2193\033[0m para navegar e ENTER para selecionar", AMARELO);
 
-        printf("\n\n\n\n\n\n\n\n");
-        centralizarTextoCor(21, "Use as setas \033[1;32m\u2191\u2193\033[0m para navegar e ENTER para selecionar", AMARELO);
-
-        // captura as teclas de cima e baixo até o enter ser pressionado
-        tecla = _getch(); //adicionar na main
-        if (tecla == 0 || tecla == 224)
-        {
-            ext = _getch();
-            if (ext == 72 || ext == 80)
-            {                   // cima ou baixo
-                opcao = !opcao; // transforma 1 em 0 e 0 em 1
-            }
-        }
-    } while (tecla != 13); // tecla de enter
-
-    return opcao + 1;
 }
 
 void exibirCabecalho()
