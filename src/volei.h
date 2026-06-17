@@ -44,24 +44,18 @@
 #define ESQUERDA 75
 #define ENTER   13
 #define ESC     27
-// structs e enums
-typedef enum {
-    TELA_MENU,
-    TELA_SELECAO,
-    TELA_QUADRA
-} Tela;
-
+// structs
 typedef struct {
     int numero;
     char funcao[15];
 } Jogador;
 
 typedef struct {
-    int sistema;
-    int rodizio;
-    int fase;
-    Tela telaAtual;
-    int opcaoSelecionada;
+    int sistema;    // 0 = "5x1"  1 = "4x2"
+    int rodizio;    // Posições em ordem de 1 a 6
+    int fase;       // "5x1" --> Rotações de 1 a 5; "4x2" -->  Rotações de 1 a 2
+    int telaAtual;  // 0 = Tela Menu  1 = Tela Seleção  2 = Tela Quadra
+    int opcaoSelecionada; // 0 = Opção de cima  1 = Opção de baixo (Tela Menu e Tela Seleção)
 } EstadoJogo;
 
 // variáveis globais 

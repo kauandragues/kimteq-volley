@@ -2,25 +2,11 @@
 
 EstadoJogo estado;
 
-int capturarTecla() {
-    int tecla = _getch();
-    if (tecla == 0 || tecla == 224) {
-        int ext = _getch();
-        switch (ext) {
-            case 72:    return CIMA;
-            case 80:   return BAIXO;
-            case 77: return DIREITA;
-            case 75: return ESQUERDA;
-        }
-    }
-    return tecla;
-}
-
 int main() {
     estado.sistema = 1;
     estado.rodizio = 1;
     estado.fase = 0;
-    estado.telaAtual = TELA_MENU;
+    estado.telaAtual = 0;
     estado.opcaoSelecionada = 0;
 
     int tecla;
@@ -30,7 +16,7 @@ int main() {
 
     while (rodando) {
         switch (estado.telaAtual) {
-            case TELA_MENU:
+            case 0:
                 exibirMenuInicial();
                 tecla = capturarTecla();
 
@@ -43,19 +29,19 @@ int main() {
                         estado.sistema = 1;
                         estado.rodizio = 1;
                         estado.fase = 0;
-                        estado.telaAtual = TELA_SELECAO;
+                        estado.telaAtual = 1;
                     }
                 }
                 break;
 
-            case TELA_SELECAO:
+            case 1:
                 estado.sistema = exibirSelecaoSistema();
                 estado.rodizio = 1;
                 estado.fase = 0;
-                estado.telaAtual = TELA_QUADRA;
+                estado.telaAtual = 2;
                 break;
 
-            case TELA_QUADRA:
+            case 2:
                 exibirQuadra();
                 tecla = capturarTecla();
 
@@ -73,10 +59,10 @@ int main() {
                         if (--estado.rodizio < 1) estado.rodizio = NUM_RODIZIOS;
                         break;
                     case 'S': case 's':
-                        estado.telaAtual = TELA_SELECAO;
+                        estado.telaAtual = 1;
                         break;
                     case ESC:
-                        estado.telaAtual = TELA_MENU;
+                        estado.telaAtual = 0;
                         estado.opcaoSelecionada = 0;
                         break;
                 }

@@ -1,6 +1,6 @@
 CC = gcc
 CFLAGS = -Wall -I src
-SRC = src/main.c src/telas.c src/arquivos.c
+SRC = src/main.c src/telas.c src/arquivos.c src/teclado.c
 TARGET = volei_simulator.exe
 
 all: $(TARGET)
