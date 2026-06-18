@@ -45,8 +45,14 @@ int main() {
 
                 switch(tecla){
                     case CIMA:
+                     if(estado.opcaoSelecionada > 0){
+                        estado.opcaoSelecionada--;    
+                     }
+                     break;
                     case BAIXO:
-                        estado.opcaoSelecionada = !estado.opcaoSelecionada;
+                       if(estado.opcaoSelecionada < 2){
+                        estado.opcaoSelecionada++;
+                        }
                         break;
                     case ENTER:
                         if (estado.opcaoSelecionada == 0) { // 5x1
@@ -54,11 +60,18 @@ int main() {
                             estado.rodizio = 1; // reinicia para rod1
                             estado.fase = 0; // reinicia para fase 1
                             estado.telaAtual = 2; // tela de quadra
-                        } else {// 4x2
+                        } else if(estado.opcaoSelecionada == 1){// 4x2
                             estado.sistema = 1; // sistema 4x2
                             estado.rodizio = 1; // reinicia para rod1
                             estado.fase = 0; // reinicia para fase 1
                             estado.telaAtual = 2; // tela de quadra
+                        }
+                        else{
+                            estado.opcaoSelecionada = 0; // Reinicia para a primeira opção
+                            estado.sistema = 0; // reinicia para 5x1
+                            estado.rodizio = 1; // reinicia para rod1
+                            estado.fase = 0; // reinicia para fase 1
+                            estado.telaAtual = 0; // Volta para o menu
                         }
                         break;
                 }

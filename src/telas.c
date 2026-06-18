@@ -108,6 +108,14 @@ void exibirSelecaoSistema(int opcao) // 0 = 5x1  1 = 4x2
     {
         centralizarTextoCor(12, "   Sistema 4x2 (2 Levantadores, 4 Atacantes)   ", BRANCO);
     }
+    if (opcao == 2)
+    {
+        centralizarTextoCor(14, ">> Voltar <<", VERMELHO);
+    }
+    else
+    {
+        centralizarTextoCor(14, "   Voltar   ", BRANCO);
+    }
 
     printf("\n\n\n\n\n\n\n\n");
     centralizarTextoCor(21, "Use as setas \033[1;32m\u2191\u2193\033[0m para navegar e ENTER para selecionar", AMARELO);
