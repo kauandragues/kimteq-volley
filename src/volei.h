@@ -46,12 +46,8 @@
 #define ESQUERDA 75
 #define ENTER   13
 #define ESC     27
-// structs
-typedef struct {
-    int numero;
-    char funcao[15];
-} Jogador;
 
+// struct
 typedef struct {
     int sistema;    // 0 = "5x1"  1 = "4x2"
     int rodizio;    // Posições em ordem de 1 a 6
