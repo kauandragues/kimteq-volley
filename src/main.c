@@ -101,9 +101,7 @@ int main() {
         }
     }
 
-    limparTela();
-    centralizarTextoCor(12, "Obrigado por usar o Simulador Tatico de Volei!", VERDE_B);
-    printf("\033[13;1H");
+    system("exit");
     return 0;
 }
 

@@ -1,21 +1,6 @@
 #include "volei.h"
 
-//ponteiro = Vetor de endereço de caracteres
 
-//Constante que salva o nome de cada fase do jogo dentro de um rodízio, vai ser chamado no Telas para o cabeçalho
-const char *NOMES_FASES[] = {
-    "1 - Base",
-    "2 - Saque", 
-    "3 - Defesa",
-    "4 - Ataque",
-    "5 - Recepção",
-};
-
-//Constante que salva o nome de cada sistema do jogo, vai ser chamado no Telas para o cabeçalho
-const char *NOMES_SISTEMAS[] = {
-    "Sistema 5x1",
-    "Sistema 4x2"
-};
 
 //Constante que salva o nome de cada arquivo de cada fase do jogo, vai ser chamado no Arquivos(este arquivo) para ler os arquivos .txt das quadras
 const char *NOMES_ARQUIVOS_FASE_5x1[] = {

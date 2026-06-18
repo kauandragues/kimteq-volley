@@ -1,5 +1,28 @@
 #include "volei.h"
 
+//ponteiro = Vetor de endereço de caracteres
+
+//Constante que salva o nome de cada fase do jogo dentro de um rodízio, vai ser chamado no Telas para o cabeçalho
+const char *NOMES_FASES_5x1[] = {
+    "1 - Base",
+    "2 - Saque", 
+    "3 - Defesa",
+    "4 - Ataque",
+    "5 - Recepção",
+};
+const char *NOMES_FASES_4x2[] = {
+    "1 - Saque",
+    "2 - Recepção", 
+};
+
+//Constante que salva o nome de cada sistema do jogo, vai ser chamado no Telas para o cabeçalho
+const char *NOMES_SISTEMAS[] = {
+    "Sistema 5x1",
+    "Sistema 4x2"
+};
+
+
+
 void habilitarANSI()
 {
     HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);                        // inicializa o manipulador do terminal windows
@@ -32,7 +55,7 @@ void exibirMenuInicial()
 
     printf("\n\n\n");
     centralizarTextoCor(4, "========================================", CIANO);
-    centralizarTextoCor(5, "   SIMULADOR TATICO DE VOLEI", VERDE_B);
+    centralizarTextoCor(5, "   SIMULADOR TÁTICO DE VÔLEI", VERDE_B);
     centralizarTextoCor(6, "========================================", CIANO);
     printf("\n\n\n");
 
@@ -42,16 +65,16 @@ void exibirMenuInicial()
     }
     else
     {
-        centralizarTextoCor(10, "   ENTRAR EM QUADRA", BRANCO);
+        centralizarTextoCor(10, "   ENTRAR EM QUADRA   ", BRANCO);
     }
 
     if (estado.opcaoSelecionada == 1)
     {
-        centralizarTextoCor(12, ">> SAIR DO PROGRAMA <<", VERDE_B);
+        centralizarTextoCor(12, ">> SAIR DO PROGRAMA <<", VERMELHO);
     }
     else
     {
-        centralizarTextoCor(12, "   SAIR DO PROGRAMA", BRANCO);
+        centralizarTextoCor(12, "   SAIR DO PROGRAMA   ", BRANCO);
     }
 
     printf("\n\n\n\n\n\n\n\n");
@@ -64,7 +87,7 @@ void exibirSelecaoSistema(int opcao) // 0 = 5x1  1 = 4x2
     limparTela();
     printf("\n\n\n");
     centralizarTextoCor(4, "========================================", CIANO);
-    centralizarTextoCor(5, "      SELECIONE O SISTEMA TATICO", VERDE_B);
+    centralizarTextoCor(5, "      SELECIONE O SISTEMA TÁTICO", VERDE_B);
     centralizarTextoCor(6, "========================================", CIANO);
     printf("\n\n\n\n");
 
@@ -74,7 +97,7 @@ void exibirSelecaoSistema(int opcao) // 0 = 5x1  1 = 4x2
     }
      else
     {
-        centralizarTextoCor(10, "   Sistema 5x1 (1 Levantador, 5 Atacantes)", BRANCO);
+        centralizarTextoCor(10, "   Sistema 5x1 (1 Levantador, 5 Atacantes)   ", BRANCO);
     }
     printf("\n");
     if (opcao == 1)
@@ -83,7 +106,7 @@ void exibirSelecaoSistema(int opcao) // 0 = 5x1  1 = 4x2
     }
     else
     {
-        centralizarTextoCor(12, "   Sistema 4x2 (2 Levantadores, 4 Atacantes)", BRANCO);
+        centralizarTextoCor(12, "   Sistema 4x2 (2 Levantadores, 4 Atacantes)   ", BRANCO);
     }
 
     printf("\n\n\n\n\n\n\n\n");
@@ -94,10 +117,14 @@ void exibirSelecaoSistema(int opcao) // 0 = 5x1  1 = 4x2
 void exibirCabecalho()
 {
     printf("%s%s===========================================%s\n", NEGRITO, CIANO, RESET);
-    printf("%s%s  %s - Rodizio %d%s", NEGRITO, VERDE_B,
+    printf("%s%s  %s - Rodízio %d%s", NEGRITO, VERDE_B,
            NOMES_SISTEMAS[estado.sistema], estado.rodizio, RESET);
-    printf("%s  %s%s\n", AMARELO_B,
-           NOMES_FASES[estado.fase], RESET);
+   
+    if(estado.sistema==1){
+        printf("%s  %s%s\n", AMARELO_B, NOMES_FASES_4x2[estado.fase], RESET);
+    } else{       
+        printf("%s  %s%s\n", AMARELO_B, NOMES_FASES_5x1[estado.fase], RESET);
+    }
     printf("%s%s===========================================%s", NEGRITO, CIANO, RESET);
 }
 
