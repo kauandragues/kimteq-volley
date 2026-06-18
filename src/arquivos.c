@@ -1,7 +1,5 @@
 #include "volei.h"
 
-
-
 //Constante que salva o nome de cada arquivo de cada fase do jogo, vai ser chamado no Arquivos(este arquivo) para ler os arquivos .txt das quadras
 const char *NOMES_ARQUIVOS_FASE_5x1[] = {
     "01_base.txt",
@@ -31,7 +29,7 @@ void montarCaminho(){
 }
 
 //Função que carrega os arquivos na tela, chamado em telas.c todas as vezes que muda a fase ou o rodizio ou qualquer coisa da tela que precise carregar um dos arquivos de quadra
-int carregarSlide(){
+void carregarSlide(){
     FILE *arquivo;
     char linha[90];
 
@@ -45,7 +43,7 @@ int carregarSlide(){
         printf("\n %sPressione qualquer tecla para voltar.%s", AMARELO, RESET);
         //_getch() serve pra capturar uma tecla do teclado.
         _getch();
-        return 0;
+        return;
     }
 
     //while para passar por todas as linhas do .txt
@@ -55,6 +53,4 @@ int carregarSlide(){
 
     //Assim que terminar o while, fecha o arquivo e returna o valor 1
     fclose(arquivo);
-    return 1;
-
 }

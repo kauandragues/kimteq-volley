@@ -77,7 +77,7 @@ void exibirBarraControles(void);
 void exibirQuadra(void);
 
 void montarCaminho(void);
-int carregarSlide(void);
+void carregarSlide(void);
 
 int capturarTecla(void);
 

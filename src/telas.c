@@ -21,8 +21,6 @@ const char *NOMES_SISTEMAS[] = {
     "Sistema 4x2"
 };
 
-
-
 void habilitarANSI()
 {
     HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);                        // inicializa o manipulador do terminal windows
